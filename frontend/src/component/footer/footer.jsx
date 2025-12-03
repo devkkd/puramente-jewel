@@ -16,7 +16,7 @@ export default function Footer() {
         <div>
           <h1 className="text-lg font-bold text-cyan-500 mb-3">CONTACT US</h1>
           <div className="text-sm space-y-2">
-            <p>📍 83/1 Ground Floor, Chetak Marg, Sector 8, Pratap Nagar, Jaipur-302033</p>
+            <p>📍83/B-1 , Ground Floor Chetak Marg, Sector-8, Sanganer, Pratap Nagar, Jaipur, Rajasthan 302033</p>
             <p>📞 +91 9314 346 148</p>
             <p>✉ info@puramentejewel.com</p>
           </div>
@@ -95,7 +95,8 @@ export default function Footer() {
             <Link to="/category/Rings" className="hover:text-cyan-500">{t("Rings")}</Link>
             <Link to="/category/Necklaces" className="hover:text-cyan-500">{t("Necklaces")}</Link>
             <Link to="/category/Bracelet" className="hover:text-cyan-500">{t("Bracelet")}</Link>
-            <Link to="/category/Pendant" className="hover:text-cyan-500">{t("Pendant")}</Link>
+            <Link to="/category/Earrings" className="hover:text-cyan-500">{t("Earrings")}</Link>
+
           </div>
         </div>
       </div>

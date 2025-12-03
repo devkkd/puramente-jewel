@@ -19,7 +19,7 @@ const Jewelryinfo = () => {
           </p>
         </div>
       ),
-      image: "/whypuramente.jpg",
+      image: "/whypuramentejewel.jpg",
     },
     welcome: {
       title: "Welcome to Your Jewelry Journey",
@@ -38,7 +38,7 @@ const Jewelryinfo = () => {
           </p>
         </div>
       ),
-      image: "https://res.cloudinary.com/dqibmkvib/image/upload/v1746783191/3_vtn0ff.jpg",
+      image: "/JeweleryJourney.jpg",
     },
     custom: {
       title: "Crafting Dreams: Custom Jewelry",
@@ -52,7 +52,7 @@ const Jewelryinfo = () => {
           </p>
         </div>
       ),
-      image: "https://res.cloudinary.com/dqibmkvib/image/upload/v1746782736/WhatsApp_Image_2025-05-09_at_14.01.43_7cf39cfc_gflmui.jpg",
+      image: "/CraftingDreamsCustomJewelry.jpg",
     },
     materials: {
       title: "Unveiling the Sparkle: Our Materials",
@@ -80,7 +80,7 @@ const Jewelryinfo = () => {
           </div>
         </div>
       ),
-      image: "/boutique.jpg",
+      image: "/UnveilingtheSpark.jpg",
     },
     global: {
       title: "Our Global Network",
@@ -135,7 +135,7 @@ const Jewelryinfo = () => {
         </div>
       ),
       image:
-        "https://res.cloudinary.com/dqibmkvib/image/upload/v1747898205/Your_Journey_Begins_aj4j6i.jpg",
+        "/Craftedindia.jpg",
     },
   };
 

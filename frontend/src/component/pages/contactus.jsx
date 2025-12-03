@@ -343,8 +343,7 @@ export default function Contactus() {
               <h1>
                 <MapPin size={40} />
               </h1>
-              Address: 83/1 Ground Floor, Chetak Marg, Sector 8, Pratap Nagar,
-              Jaipur-302033
+              83/B-1 , Ground Floor Chetak Marg, Sector-8, Sanganer, Pratap Nagar, Jaipur, Rajasthan 302033
             </p>
             <p className="lg:text-xl text-center font-semibold text-black">
               {t("phone")}: +91 9314 346 148

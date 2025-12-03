@@ -75,7 +75,7 @@ export default function Navbar1() {
   return (
     <div>
       {/* Top certification strip */}
-      <div className="w-full bg-background-sky text-white text-xs sm:text-sm font-semibold flex items-center justify-center sm:gap-2 sm:px-4 border-b h-[52px] border-white shadow-md z-50">
+      {/* <div className="w-full bg-background-sky text-white text-xs sm:text-sm font-semibold flex items-center justify-center sm:gap-2 sm:px-4 border-b h-[52px] border-white shadow-md z-50">
         <span className="hidden sm:inline text-center leading-tight">
           Certified Ethical Manufacturing by Sedex - Ensuring Sustainable Jewellery Production
         </span>
@@ -87,24 +87,17 @@ export default function Navbar1() {
           alt="Sedex Certified"
           className="h-12 sm:h-18 md:h-12 lg:h-14 w-auto object-contain"
         />
-      </div>
+      </div> */}
 
       {/* Desktop Navbar */}
       <nav className="w-full hidden lg:flex h-20 items-center bg-background-sky px-[80px] justify-between">
         {/* Left - Social Icons */}
         <div className="flex items-center gap-8">
-          <a href="https://www.instagram.com/puramenteinternational/" target="_blank" rel="noopener noreferrer">
-            <FaInstagram size={24} className="text-black hover:text-gray-700" />
-          </a>
-          <a href="https://www.facebook.com/puramenteinternational1/" target="_blank" rel="noopener noreferrer">
-            <FaFacebookF size={24} className="text-black hover:text-gray-700" />
-          </a>
-          <a href="https://www.linkedin.com/company/puramente-international/" target="_blank" rel="noopener noreferrer">
-            <FaLinkedinIn size={24} className="text-black hover:text-gray-700" />
-          </a>
-          <a href="https://www.youtube.com/@puramenteinternational1982" target="_blank" rel="noopener noreferrer">
-            <FaYoutube size={24} className="text-black hover:text-gray-700" />
-          </a>
+         <img
+          src="/smetaSedex.png"
+          alt="Sedex Certified"
+          className="h-12 sm:h-18 md:h-12 lg:h-22 w-auto object-contain flex align-middle items-center"
+        />
         </div>
 
         {/* Center - Logo */}
@@ -211,7 +204,7 @@ export default function Navbar1() {
         </div>
       </nav>
 
-     {/* Sidebar Menu */}
+{/* Sidebar Menu */}
 <div
   className={`${
     sidemenu
@@ -219,14 +212,40 @@ export default function Navbar1() {
       : "hidden"
   }`}
 >
+  {/* Close button */}
   <button className="absolute h-12 w-12 p-2 top-6 right-6" onClick={toggleSideMenu}>
     <IoCloseSharp className="w-14 h-10 font-bold" />
   </button>
 
+  {/* Sedex Certification Image */}
+  <div className="flex items-center gap-8 mt-8 ml-6">
+    <img
+      src="/smetaSedex.png"
+      alt="Sedex Certified"
+      className="h-20 sm:h-20 md:h-20 w-auto object-contain flex align-middle items-center"
+    />
+  </div>
+
   {/* Menu Links */}
-  <div className="flex flex-col items-start text-2xl text-button-orange gap-8 mt-32 ml-12 font-bold">
+  <div className="flex flex-col items-start text-2xl text-button-orange gap-8 mt-8 ml-12 font-bold">
     <Link onClick={toggleSideMenu} to="/">{t("Home")}</Link>
-    <Link onClick={toggleSideMenu} to="/shopall">Jewellery Design</Link>
+    {/* Jewellery Design Dropdown for Sidebar */}
+    <div className="flex flex-col w-full">
+      <details className="w-full">
+        <summary className="cursor-pointer list-none font-bold text-2xl">
+          Jewellery Design
+        </summary>
+
+        <div className="flex flex-col gap-4 mt-4 ml-4 text-lg font-semibold">
+          <Link onClick={toggleSideMenu} to="/category/alldesigns">All Designs</Link>
+          <Link onClick={toggleSideMenu} to="/category/Necklaces">Necklace</Link>
+          <Link onClick={toggleSideMenu} to="/category/Earrings">Earring</Link>
+          <Link onClick={toggleSideMenu} to="/category/Bracelets">Bracelet</Link>
+          <Link onClick={toggleSideMenu} to="/category/Rings">Ring</Link>
+        </div>
+      </details>
+    </div>
+
     <Link onClick={toggleSideMenu} to="/contactus">{t("Contact Us")}</Link>
     <Link onClick={toggleSideMenu} to="/aboutus">{t("About Us")}</Link>
     <Link onClick={toggleSideMenu} to="/faq">FAQ</Link>
@@ -273,6 +292,8 @@ export default function Navbar1() {
     </a>
   </div>
 </div>
+
+
 
     </div>
   );

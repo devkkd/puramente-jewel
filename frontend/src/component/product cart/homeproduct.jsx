@@ -72,12 +72,11 @@ const ProductCard = () => {
     updateQuantity(_id, newQty);
   };
 
-const decrementQuantity = (_id) => {
-  const newQty = Math.max((quantities[_id] || 0) - 1, 0);
-  setQuantities((prev) => ({ ...prev, [_id]: newQty }));
-  updateQuantity(_id, newQty);
-};
-
+  const decrementQuantity = (_id) => {
+    const newQty = Math.max((quantities[_id] || 0) - 1, 0);
+    setQuantities((prev) => ({ ...prev, [_id]: newQty }));
+    updateQuantity(_id, newQty);
+  };
 
   const getImageSrc = (product) => {
     if (product?.imageUrl) return product.imageUrl;
@@ -99,7 +98,8 @@ const decrementQuantity = (_id) => {
           Our Latest Collection
         </h1>
         <p className="text-md font-medium text-cyan-800 mt-2 italic max-w-2xl mx-auto">
-          "Exquisite craftsmanship meets timeless elegance from the best jewellery manufacturers in India."
+          "Exquisite craftsmanship meets timeless elegance from the best
+          jewellery manufacturers in India."
         </p>
       </div>
 
@@ -120,7 +120,10 @@ const decrementQuantity = (_id) => {
             >
               {/* Image Section - Full Width & Height */}
               <div className="relative w-full h-66 p-0 bg-gradient-to-br from-cyan-50 to-white">
-                <Link to={`/singleproduct/${product._id}`} className="block w-full h-full">
+                <Link
+                  to={`/singleproduct/${product._id}`}
+                  className="block w-full h-full"
+                >
                   <img
                     src={getImageSrc(product)}
                     alt={`${product.name} – ${product.category} by Puramente | fashion jewellery wholesale suppliers in India`}
@@ -138,11 +141,14 @@ const decrementQuantity = (_id) => {
 
               {/* Content Section */}
               <div className="flex flex-col flex-grow p-4">
-                <Link to={`/singleproduct/${product._id}`} className="flex-grow mb-3">
+                <Link
+                  to={`/singleproduct/${product._id}`}
+                  className="flex-grow mb-3"
+                >
                   <h3 className="text-lg font-bold text-cyan-900 tracking-tight leading-tight mb-2 line-clamp-2 min-h-[2.5rem]">
                     {product.name}
                   </h3>
-                  
+
                   <div className="flex justify-between items-center mb-2">
                     <span className="text-xs font-semibold text-cyan-700 bg-cyan-50 px-2 py-1 rounded">
                       {product.category}
@@ -158,7 +164,9 @@ const decrementQuantity = (_id) => {
                   {addedProducts.includes(product._id) ? (
                     <div className="space-y-2">
                       <div className="flex justify-between items-center">
-                        <span className="text-xs font-semibold text-cyan-700">Qty:</span>
+                        <span className="text-xs font-semibold text-cyan-700">
+                          Qty:
+                        </span>
                         <div className="flex items-center gap-2">
                           <button
                             onClick={() => decrementQuantity(product._id)}
@@ -167,19 +175,22 @@ const decrementQuantity = (_id) => {
                             −
                           </button>
                           <input
-  type="number"
-  value={quantities[product._id] || 0}
-  min="0"
-  onChange={(e) => {
-    const newQty = Math.max(Number(e.target.value), 0);
-    setQuantities((prev) => ({
-      ...prev,
-      [product._id]: newQty,
-    }));
-    updateQuantity(product._id, newQty);
-  }}
-  className="w-12 text-center py-1 border border-cyan-200 rounded text-xs font-bold text-cyan-800"
-/>
+                            type="number"
+                            value={quantities[product._id] || 0}
+                            min="0"
+                            onChange={(e) => {
+                              const newQty = Math.max(
+                                Number(e.target.value),
+                                0
+                              );
+                              setQuantities((prev) => ({
+                                ...prev,
+                                [product._id]: newQty,
+                              }));
+                              updateQuantity(product._id, newQty);
+                            }}
+                            className="w-12 text-center py-1 border border-cyan-200 rounded text-xs font-bold text-cyan-800"
+                          />
 
                           <button
                             onClick={() => incrementQuantity(product._id)}

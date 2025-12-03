@@ -1,11 +1,9 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { FaLinkedin, FaYoutube } from "react-icons/fa6";
-import { FaFacebook } from "react-icons/fa";
 import { IsAdmin } from "../authantication/isauthanticat";
-import { AiFillInstagram } from "react-icons/ai";
 import { ChevronDown } from "lucide-react";
+import { FaInstagram, FaFacebookF, FaLinkedinIn, FaYoutube } from "react-icons/fa6";
 
 export default function Navbar2() {
   const categories = [
@@ -48,7 +46,9 @@ export default function Navbar2() {
 
   return (
     <div>
+       
       <nav className="relative hidden lg:flex gap-8 items-center h-12 w-full">
+       
         <div className="text-button-orange flex justify-between items-center px-24 w-full gap-10 p-2 text-md font-bold">
           <Link
             onMouseEnter={() => setDropdown(false)}
@@ -132,38 +132,33 @@ export default function Navbar2() {
           >
             {t("Contact us")}
           </Link>
-
-          {IsAdmin() ? (
-            <Link className="text-center text-lg" to="/dashboard">
-              <button className="bg-cyan-500 hover:bg-cyan-800 h-8 w-28 border-2 border-cyan-800 text-white">
-                {t("Dashboard")}
-              </button>
+         
+{/* Social Icons */}
+<div className="flex gap-3 ml-4">
+  <a href="https://www.instagram.com/puramenteinternational/" target="_blank" rel="noopener noreferrer">
+    <FaInstagram className="text-black hover:text-gray-700" size={20} />
+  </a>
+  <a href="https://www.facebook.com/puramenteinternational1/" target="_blank" rel="noopener noreferrer">
+    <FaFacebookF className="text-black hover:text-gray-700" size={20} />
+  </a>
+  <a href="https://www.linkedin.com/company/puramente-international/" target="_blank" rel="noopener noreferrer">
+    <FaLinkedinIn className="text-black hover:text-gray-700" size={20} />
+  </a>
+  <a href="https://www.youtube.com/@puramenteinternational1982" target="_blank" rel="noopener noreferrer">
+    <FaYoutube className="text-black hover:text-gray-700" size={20} />
+  </a>
+          </div>
+          
+          {IsAdmin() && (
+  <Link className="text-center text-lg" to="/dashboard">
+    <button className="bg-cyan-500 hover:bg-cyan-800 h-8 w-28 border-2 border-cyan-800 text-white">
+      {t("Dashboard")}
+    </button>
             </Link>
-          ) : (
-            <div className="flex gap-4">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.instagram.com/puramenteinternational/"
-              >
-                <AiFillInstagram className="h-6 hover:text-cyan-500 w-8" />
-              </a>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.facebook.com/puramenteinternational1/"
-              >
-                <FaFacebook className="h-6 hover:text-cyan-500 w-8" />
-              </a>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.youtube.com/@puramenteinternational1982"
-              >
-                <FaYoutube className="h-6 hover:text-cyan-500 w-8" />
-              </a>
-            </div>
+            
           )}
+          
+
         </div>
       </nav>
     </div>

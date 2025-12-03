@@ -80,7 +80,7 @@ const decrementQuantity = (_id) => {
 
   const getImageSrc = (product) => {
     if (product?.cloudinaryId)
-      return `https://res.cloudinary.com/ddtharbsi/image/upload/c_fill,w_500,h_600,q_auto:best,f_auto,dpr_2.0/${product.cloudinaryId}`;
+      return `https://res.cloudinary.com/ddtharbsi/image/upload/c_fill,w_500,h_700,q_auto:best,f_auto,dpr_2.0/${product.cloudinaryId}`;
     if (product?.imageUrl) return product.imageUrl;
     if (product?.imageurl?.startsWith("http")) return product.imageurl;
     return "/default-placeholder.jpg";
